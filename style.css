@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
-:root {
-    --linear: linear-gradient(to right, rgba(244, 167, 100, 1), rgba(255, 222, 194, 1));
-}
 
 * {
     padding: 0;
@@ -26,8 +23,6 @@ body {
     color: #555;
     /* Only works if there is nothing absolutely positioned in relation to body */
     overflow-x: hidden;
-    background:
-        var(--linear);
 }
 
 .hero-container {
@@ -92,58 +87,22 @@ body {
 }
 
 .slider {
-    max-width: 55%;
-    position: relative;
+    max-width: 40%;
+
 }
 
 
 .hero-image {
-    max-width: 55%;
+    max-width: 65%;
     height: auto;
     margin: 0 auto;
 
 }
 
 .slick-prev,
-.slick-next {
-    display: none !important;
-}
+.slick-next {}
 
-.prevBtn {
-    position: absolute;
-    top: 50%;
-    left: 640px;
-    /* Adjust this value as needed */
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    cursor: pointer;
-}
 
-.nextBtn {
-    position: absolute;
-    top: 50%;
-    right: 160px;
-    /* Adjust this value as needed */
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.nextBtn,
-.prevBtn {
-    font-size: 18px;
-    padding: 1rem 1.4rem;
-    border: 1px solid #fff;
-    border-radius: 100%;
-    background: transparent;
-    color: #fff;
-}
 
 .header-container {
     background-color: transparent;
@@ -176,20 +135,71 @@ body {
     width: 80px;
 }
 
+.res {
+    display: none;
+
+}
+
 @media screen and (max-width: 900px) {
     .hero-container {
         flex-direction: column;
         padding: 0 2rem;
         text-align: center;
+        justify-content: center;
+        gap: 8rem;
     }
 
     .hero-data {
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        gap: 4.5rem;
+        gap: 3rem;
     }
+
+    .heading h1 {
+        font-size: 4rem;
+    }
+
+    .heading h2 {
+        font-size: 3rem;
+    }
+
+    .hero-image {
+        max-width: 90%;
+    }
+
+    .header-container {
+        padding: 1rem;
+
+    }
+
+    .header-container ul {
+        padding: 0 1rem;
+        font-size: 12px;
+    }
+
+
+
+    .btn-signup {
+        background-color: #000;
+        border: none;
+        border-radius: 12px;
+        color: #fff;
+        padding: 6px 12px;
+        font-size: 8px;
+        width: fit-content;
+    }
+
+    .res-desktop {
+        display: none;
+    }
+
+
+    .res {
+        display: block;
+    }
+
 
 }

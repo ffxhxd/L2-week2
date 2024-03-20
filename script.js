@@ -5,7 +5,7 @@ const productData = [
       "description": "Discover the Perfect Watch for Every Occasion and Elevate Your Style with Timeless Elegance and Precision Craftsmanship - watch",
       "price": "$499.00",
       "image_path": "Assets\\Group4.png",
-      "ambient_color": "#fbc89b"
+      "ambient_color": "linear-gradient(to right, rgba(244, 167, 100, 1), rgba(255, 222, 194, 1))"
     },
     {
       "name": "Dainty Timepieces",
@@ -13,7 +13,8 @@ const productData = [
       "description": "Explore the Ideal Timepiece for Any Moment and Enhance Your Style with Timeless Sophistication and Impeccable Craftsmanship - timepiece",
       "price": "$469.00",
       "image_path": "Assets\Group5.png",
-      "ambient_color": "#ADB0B0"
+      "ambient_color": "linear-gradient(to right, rgba(173, 176, 176, 1), rgba(225, 225, 225, 1))"
+
     },
     {
       "name": "Elegant Timepieces",
@@ -21,7 +22,7 @@ const productData = [
       "description": "Discover the Perfect Watch for Every Occasion and Elevate Your Style with Timeless Elegance and Precision Craftsmanship - watch",
       "price": "$529.00",
       "image_path": "Assets\Group6.png",
-      "ambient_color": "#30A357"
+      "ambient_color": "linear-gradient(to right, rgba(48, 163, 87, 1), rgba(117, 227, 154, 1))"
     },
     {
       "name": "Refined Timepieces",
@@ -29,7 +30,7 @@ const productData = [
       "description": "Explore the Ideal Timepiece for Any Moment and Enhance Your Style with Timeless Sophistication and Impeccable Craftsmanship - timepiece",
       "price": "$599.00",
       "image_path": "Assets\Group7.png",
-      "ambient_color": "#F24F4F"
+      "ambient_color": "linear-gradient(to right,rgba(242, 79, 79, 1), rgba(255, 168, 149, 1)"
     }
   ]
 
@@ -51,6 +52,9 @@ const productData = [
         }
     });
 
+    const body = document.getElementById('body')
+
+
     // Function to update content based on current slide
     function updateContent(currentSlide) {
         // Ensure the slide index is within bounds
@@ -61,12 +65,11 @@ const productData = [
             let product = productData[currentSlide];
             // Update the HTML content with the product data
             $('.heading h1').text(product.name);
-
             $('.hero-data p').text(product.description);
             $('.price-tag').text(product.price);
             // Set the ambient color of the body based on the product data
             $('body').css('background', product.ambient_color);
-            
+         
         }
     }
 
@@ -75,14 +78,14 @@ const productData = [
     updateContent(curr);
 
     // Previous button functionality
-    $('.prevBtn').click(function(){
+    $('.slick-prev').click(function(){
         curr = (curr - 1 + productData.length) % productData.length; // Ensure curr stays within the range
         $('.slider').slick('slickPrev');
         updateContent(curr);
     });
     
     // Next button functionality
-    $('.nextBtn').click(function(){
+    $('.slick-next').click(function(){
         curr = (curr + 1) % productData.length; // Ensure curr stays within the range
         $('.slider').slick('slickNext');
         updateContent(curr);
